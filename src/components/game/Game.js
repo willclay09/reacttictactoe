@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Game.css";
 import Board from "../board/Board";
 
@@ -50,7 +50,9 @@ class Game extends React.Component {
       const desc = move ? "Go to move #" + move : "Go to game start";
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button className="reset" onClick={() => this.jumpTo(move)}>
+            {desc}
+          </button>
         </li>
       );
     });
